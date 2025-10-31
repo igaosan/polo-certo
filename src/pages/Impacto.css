@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos específicos da página Impacto, usando o mesmo design system */
+
+.container {
+  @apply max-w-3xl mx-auto p-6 md:p-8;
+}
+
+.card {
+  @apply bg-card text-card-foreground rounded-2xl shadow-[var(--shadow-soft)] 
+         p-6 md:p-8 mb-8 border border-border transition-all;
+  background: var(--gradient-card);
+}
+
+h2 {
+  @apply text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+p {
+  @apply text-muted-foreground mb-4 leading-relaxed;
+}
+
+/* Formulário */
+.form-grid {
+  @apply grid gap-4;
+}
+
+label {
+  @apply block font-medium text-foreground;
+}
+
+select {
+  @apply w-full mt-2 p-2 rounded-lg border border-input bg-background 
+         text-foreground focus:ring-2 focus:ring-primary outline-none;
+}
+
+.form-actions {
+  @apply flex justify-center gap-4 mt-6;
+}
+
+button.btn {
+  @apply px-4 py-2 rounded-lg font-semibold shadow-md transition-all;
+}
+
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:brightness-110;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-foreground border border-border hover:bg-accent;
+}
+
+/* Resultado */
+.resultado {
+  @apply mt-8 text-center;
+}
+
+.resultado h3 {
+  @apply text-lg font-semibold mb-2;
+}
+
+.progress-bar {
+  @apply w-full h-3 rounded-full bg-muted overflow-hidden mb-3;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+  transition: width 0.5s ease;
+  border-radius: 9999px;
+}
+
+.resultado p {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+}
